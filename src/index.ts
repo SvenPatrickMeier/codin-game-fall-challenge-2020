@@ -10,7 +10,8 @@ while (true) {
 		opponent,
 		player
 	} = readInput()
+	log(actions)
 	actions.sort((a, b) => b.price - a.price)
-	log(`brew: ${actions[0].actionId} - price: ${actions[0].price}`)
+	// log(`brew: ${actions[0].actionId} - price: ${actions[0].price}`)
 	brew(actions[0].actionId)
 }
