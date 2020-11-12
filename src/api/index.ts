@@ -12,6 +12,18 @@ interface IAction {
 	taxCount: number
 	tomeIndex: number
 }
+interface IBrew extends IAction {
+	actionType: EAction.brew
+}
+interface ICast extends IAction {
+	actionType: EAction.cast
+}
+interface IOpponentCast extends IAction {
+	actionType: EAction.opponentCast
+}
+interface ILearn extends IAction {
+	actionType: EAction.learn
+}
 interface IPlayerInfo {
 	inventory: TInventory
 	score: number
@@ -20,14 +32,22 @@ type TInventory = {
 	[key in EInventory]: number
 }
 interface IInput {
-	actions: IAction[]
+	brew: IBrew[]
+	cast: ICast[]
+	learn: ILearn[]
 	opponent: IPlayerInfo
+	opponentCast: IOpponentCast[]
 	player: IPlayerInfo
 }
 export const readInput = (): IInput => {
 	/* the number of spells and recipes in play */
 	const actionCount: number = parseInt(readline())
-	const actions:IAction[] = []
+	const input: Omit<IInput, "player" | "opponent"> = {
+		brew: [],
+		cast: [],
+		learn: [],
+		opponentCast: []
+	}
 	for (let i = 0; i < actionCount; i++) {
 		const inputs: string[] = readline().split(" ")
 		const action: IAction = {
@@ -45,10 +65,20 @@ export const readInput = (): IInput => {
 			taxCount: parseInt(inputs[8]),
 			tomeIndex: parseInt(inputs[7])
 		}
-		actions.push(action)
-	}
-	const input: Partial<IInput> = {
-		actions
+		switch (action.actionType) {
+			case EAction.brew:
+				input.brew.push(action as IBrew)
+				break
+			case EAction.learn:
+				input.learn.push(action as ILearn)
+				break
+			case EAction.opponentCast:
+				input.opponentCast.push(action as IOpponentCast)
+				break
+			case EAction.cast:
+				input.cast.push(action as ICast)
+				break
+		}
 	}
 	for (let i = 0; i < 2; i++) {
 		const inputs: string[] = readline().split(" ")
