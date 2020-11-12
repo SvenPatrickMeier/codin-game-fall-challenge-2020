@@ -1,0 +1,267 @@
+---
+parser: "@typescript-eslint/parser"
+plugins:
+  - "@typescript-eslint"
+  - typescript-sort-keys
+rules:
+  no-empty-function: 0
+  typescript-sort-keys/interface: 1
+  typescript-sort-keys/string-enum: 1
+  "@typescript-eslint/no-empty-function": 1
+  "@typescript-eslint/explicit-function-return-type": 1
+  "@typescript-eslint/unbound-method":
+    - 1
+    - ignoreStatic: true
+  "@typescript-eslint/typedef":
+    - 1
+    - variableDeclaration: false
+      arrayDestructuring: false
+      arrowParameter: false
+      memberVariableDeclaration: false
+      parameter: true
+      propertyDeclaration: true
+  semi: 0
+  "@typescript-eslint/semi":
+    - 1
+    - never
+  "@typescript-eslint/restrict-plus-operands": 1
+  require-await: 0
+  "@typescript-eslint/require-await": 1
+  "@typescript-eslint/require-array-sort-compare": 1
+  quotes: 0
+  "@typescript-eslint/quotes":
+    - 1
+    - double
+    - allowTemplateLiterals: true
+  "@typescript-eslint/promise-function-async": 1
+  "@typescript-eslint/prefer-string-starts-ends-with": 1
+  "@typescript-eslint/prefer-readonly": 1
+  "@typescript-eslint/prefer-optional-chain": 1
+  "@typescript-eslint/prefer-nullish-coalescing": 1
+  "@typescript-eslint/prefer-includes": 1
+  no-unused-expressions: 0
+  "@typescript-eslint/no-unused-expressions": 1
+  "@typescript-eslint/no-this-alias": 1
+  "@typescript-eslint/no-require-imports": 1
+  "@typescript-eslint/no-non-null-assertion": 1
+  "@typescript-eslint/no-misused-promises": 1
+  "@typescript-eslint/no-misused-new": 1
+  no-magic-numbers: 0
+  "@typescript-eslint/no-magic-numbers":
+    - 1
+    - ignoreNumericLiteralTypes: true
+      ignoreReadonlyClassProperties: true
+      ignoreEnums: true
+      ignore:
+        - -1
+        - 0
+        - 1
+        - 80
+        - 8080
+        - 3306
+        - 27017
+        - 5672
+        - 5432
+  "@typescript-eslint/no-implied-eval":
+    - 1
+  "@typescript-eslint/no-for-in-array":
+    - 1
+  "@typescript-eslint/no-floating-promises":
+    - 1
+  no-extra-semi: 0
+  "@typescript-eslint/no-extra-semi":
+    - 1
+  no-extra-parens: 0
+  "@typescript-eslint/no-extra-parens":
+    - 1
+    - all
+    - ignoreJSX: all
+  "@typescript-eslint/no-extra-non-null-assertion":
+    - 1
+  "@typescript-eslint/no-empty-interface":
+    - 1
+    - allowSingleExtends: true
+  "@typescript-eslint/member-ordering":
+    - 1
+    - default:
+        order: alphabetically
+        memberTypes:
+          - signature
+          - public-static-field
+          - protected-static-field
+          - private-static-field
+          - public-decorated-field
+          - protected-decorated-field
+          - private-decorated-field
+          - public-instance-field
+          - protected-instance-field
+          - private-instance-field
+          - public-abstract-field
+          - protected-abstract-field
+          - private-abstract-field
+          - public-field
+          - protected-field
+          - private-field
+          - static-field
+          - instance-field
+          - abstract-field
+          - decorated-field
+          - field
+          - public-constructor
+          - protected-constructor
+          - private-constructor
+          - constructor
+          - public-static-method
+          - protected-static-method
+          - private-static-method
+          - public-decorated-method
+          - protected-decorated-method
+          - private-decorated-method
+          - public-instance-method
+          - protected-instance-method
+          - private-instance-method
+          - public-abstract-method
+          - protected-abstract-method
+          - private-abstract-method
+          - public-method
+          - protected-method
+          - private-method
+          - static-method
+          - instance-method
+          - abstract-method
+          - decorated-method
+          - method
+      interfaces: [ ]
+  "@typescript-eslint/member-delimiter-style":
+    - 1
+    - multiline:
+        delimiter: none
+        requireLast: false
+      singleline:
+        delimiter: comma
+        requireLast: false
+  "@typescript-eslint/consistent-type-definitions":
+    - 1
+    - interface
+  "@typescript-eslint/consistent-type-assertions":
+    - 1
+    - assertionStyle: as
+      objectLiteralTypeAssertions: allow-as-parameter
+  "@typescript-eslint/await-thenable": 1
+  "@typescript-eslint/ban-ts-comment": 1
+  "@typescript-eslint/ban-types":
+    - 1
+    - types:
+        Array:
+          message: Use literal-array `[]` instead
+      extendDefaults: true
+  "@typescript-eslint/no-explicit-any":
+    - 1
+    - fixToUnknown: false
+      ignoreRestArgs: false
+  brace-style: 0
+  "@typescript-eslint/brace-style":
+    - 1
+    - stroustrup
+    - allowSingleLine: true
+  "@typescript-eslint/naming-convention":
+    - 1
+    - selector: default
+      format:
+        - strictCamelCase
+      custom:
+        regex: "^id[A-Z]"
+        match: false
+    - selector: parameter
+      types:
+        - boolean
+      format:
+        - StrictPascalCase
+      prefix:
+        - is
+        - should
+        - has
+        - can
+        - did
+        - will
+    - selector: variable
+      types:
+        - boolean
+      format:
+        - StrictPascalCase
+      prefix:
+        - is
+        - should
+        - has
+        - can
+        - did
+        - will
+    - selector: property
+      types:
+        - boolean
+      format:
+        - StrictPascalCase
+      leadingUnderscore: allow
+      prefix:
+        - is
+        - should
+        - has
+        - can
+        - did
+        - will
+    - selector: parameterProperty
+      types:
+        - boolean
+      format:
+        - StrictPascalCase
+      prefix:
+        - is
+        - should
+        - has
+        - can
+        - did
+        - will
+    - selector: variable
+      modifiers:
+        - const
+      format:
+        - StrictPascalCase
+      prefix:
+        - C
+      filter:
+        regex: "^[A-Z]"
+        match: true
+    - selector: class
+      format:
+        - StrictPascalCase
+    - selector: memberLike
+      modifiers:
+        - private
+      format:
+        - strictCamelCase
+      leadingUnderscore: allow
+    - selector: memberLike
+      format:
+        - strictCamelCase
+      leadingUnderscore: allow
+    - selector: typeAlias
+      format:
+        - StrictPascalCase
+      prefix:
+        - T
+      custom:
+        regex: "^Id[A-Z]"
+        match: false
+    - selector: typeParameter
+      format:
+        - StrictPascalCase
+    - selector: interface
+      format:
+        - StrictPascalCase
+      prefix:
+        - I
+    - selector: enum
+      format:
+        - StrictPascalCase
+      prefix:
+        - E

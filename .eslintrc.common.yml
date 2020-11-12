@@ -1,0 +1,274 @@
+---
+env:
+  amd: false
+  browser: true
+  es6: true
+  node: true
+extends:
+  - eslint:recommended
+parserOptions:
+  ecmaVersion: 2018
+  sourceType: module
+  project: "./tsconfig.json"
+plugins:
+  - filenames
+  - import
+  - eslint-plugin-import-alias
+  - jsdoc
+  - sort-keys-fix
+  - sort-imports-es6-autofix
+  - unused-imports
+rules:
+  accessor-pairs: 0
+  array-bracket-spacing:
+    - 1
+    - never
+  array-callback-return: 1
+  arrow-parens:
+    - 1
+    - as-needed
+  arrow-spacing: 1
+  block-scoped-var: 1
+  brace-style:
+    - 1
+    - stroustrup
+  camelcase:
+    - 1
+    - properties: always
+  capitalized-comments: 0
+  comma-dangle:
+    - 1
+    - never
+  comma-style:
+    - 1
+    - last
+  comma-spacing:
+    - 1
+    - before: false
+      after: true
+  complexity: 1
+  consistent-return: 1
+  consistent-this: 1
+  curly: 1
+  default-case: 1
+  dot-notation: 1
+  dot-location:
+    - 1
+    - property
+  eol-last:
+    - 1
+    - never
+  eqeqeq: 1
+  filenames/match-regex:
+    - 1
+    - "^[a-zA-Z.]+$"
+  function-paren-newline:
+    - 1
+    - consistent
+  guard-for-in: 1
+  import/no-default-export: 1
+  import-alias/import-alias:
+    - 1
+    - relativeDepth: 0
+      aliases: []
+  indent:
+    - 1
+    - tab
+    - SwitchCase: 1
+  jsdoc/no-undefined-types: 1
+  jsx-quotes:
+    - 1
+    - prefer-double
+  key-spacing:
+    - 1
+    - beforeColon: false
+      afterColon: true
+      mode: strict
+  keyword-spacing:
+    - 1
+    - before: true
+      after: true
+  linebreak-style:
+    - 1
+    - unix
+  max-len:
+    - 1
+    - code: 100
+      ignoreUrls: true
+      ignoreStrings: true
+      ignoreTemplateLiterals: true
+      ignoreRegExpLiterals: true
+  max-statements-per-line:
+    - 1
+    - max: 1
+  multiline-ternary: 1
+  new-parens: 1
+  newline-per-chained-call: 1
+  no-await-in-loop: 1
+  no-caller: 1
+  no-case-declarations: 1
+  no-cond-assign: 1
+  no-console:
+    - 1
+    - allow:
+        - warn
+        - error
+  no-dupe-args: 1
+  no-dupe-keys: 1
+  no-duplicate-case: 1
+  no-empty: 1
+  no-empty-character-class: 1
+  no-empty-function: 1
+  no-empty-pattern: 1
+  no-eval: 1
+  no-ex-assign: 1
+  no-extend-native: 1
+  no-extra-bind: 1
+  no-extra-boolean-cast: 1
+  no-extra-semi: 1
+  no-fallthrough: 1
+  no-floating-decimal: 1
+  no-func-assign: 1
+  no-inline-comments: 1
+  no-invalid-regexp: 1
+  no-implicit-coercion: 1
+  no-implicit-globals: 1
+  no-implied-eval: 1
+  no-iterator: 1
+  no-labels: 1
+  no-lone-blocks: 1
+  no-multiple-empty-lines:
+    - 1
+    - max: 0
+      maxEOF: 0
+  no-negated-in-lhs: 1
+  no-multi-spaces: 1
+  no-multi-str: 1
+  no-native-reassign: 1
+  no-new-func: 1
+  no-new-wrappers: 1
+  no-obj-calls: 1
+  no-octal: 1
+  no-octal-escape: 1
+  no-param-reassign: 1
+  no-proto: 1
+  no-prototype-builtins: 0
+  no-redeclare:
+    - 1
+    - builtinGlobals: true
+  no-regex-spaces: 1
+  no-return-assign: 1
+  no-script-url: 1
+  no-self-assign: 1
+  no-self-compare: 1
+  no-sequences: 1
+  no-sparse-arrays: 1
+  no-this-before-super: 1
+  no-throw-literal: 0
+  no-trailing-spaces: 1
+  no-underscore-dangle: 0
+  no-unneeded-ternary: 1
+  no-delete-var: 1
+  no-unexpected-multiline: 1
+  no-unmodified-loop-condition: 1
+  no-unreachable: 1
+  no-unused-vars: 'off'
+  no-unused-expressions: 1
+  no-useless-call: 1
+  no-useless-concat: 1
+  no-useless-escape: 1
+  no-var: 1
+  no-void:
+    - 1
+    - allowAsStatement: true
+  no-warning-comments:
+    - 1
+    - terms:
+        - todo
+        - fixme
+        - fix
+        - bugfix
+      location: anywhere
+  no-with: 1
+  object-curly-newline:
+    - 1
+    - ExportDeclaration:
+        minProperties: 3
+        multiline: true
+      ImportDeclaration:
+        minProperties: 3
+        multiline: true
+      ObjectExpression:
+        minProperties: 1
+        multiline: true
+      ObjectPattern:
+        minProperties: 1
+        multiline: true
+  object-curly-spacing:
+    - 1
+    - always
+  object-property-newline: 1
+  object-shorthand:
+    - 1
+    - always
+    - avoidQuotes: true
+  operator-linebreak:
+    - 1
+    - before
+  prefer-arrow-callback: 1
+  prefer-const: 1
+  prefer-template: 1
+  quotes:
+    - 1
+    - double
+    - allowTemplateLiterals: true
+  radix:
+    - 1
+    - as-needed
+  require-atomic-updates: 0
+  semi:
+    - 1
+    - never
+  sort-imports-es6-autofix/sort-imports-es6:
+    - 1
+    - ignoreCase: false
+      ignoreMemberSort: false
+      memberSyntaxSortOrder:
+        - none
+        - all
+        - multiple
+        - single
+  sort-keys-fix/sort-keys-fix: warn
+  sort-keys:
+    - 1
+    - asc
+    - caseSensitive: true
+      natural: true
+      minKeys: 2
+  space-before-blocks:
+    - 1
+    - always
+  space-before-function-paren:
+    - 1
+    - anonymous: always
+      asyncArrow: always
+      named: never
+  space-in-parens:
+    - 1
+    - never
+  space-infix-ops: 1
+  space-unary-ops: 1
+  spaced-comment:
+    - 1
+    - always
+    - block:
+        balanced: true
+  strict:
+    - 1
+    - global
+  unused-imports/no-unused-imports-ts: 1
+  unused-imports/no-unused-vars-ts: 0
+  yoda:
+    - 1
+    - never
+    - exceptRange: true

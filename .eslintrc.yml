@@ -1,0 +1,8 @@
+---
+parserOptions:
+  project: "./tsconfig.json"
+extends:
+- "./.eslintrc.common.yml"
+- "./.eslintrc.typescript.yml"
+#rules:
+#  "@typescript-eslint/unbound-method": 0
